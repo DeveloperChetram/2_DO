@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  transition: all ease 0.5s;
+  transition: all 0.3s ease-in-out;
 }
 
 body,
@@ -22,11 +22,113 @@ main {
   justify-content: center;
 }
 
+.btn {
+  padding: 10px 20px;
+  background-color: #4a4a4a;
+  color: #ffffff;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  font-size: 0.9em;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+.btn:hover {
+  background-color: #5a5a5a;
+  border-color: #EE82EE;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+.btn:active {
+  background-color: #3a3a3a;
+  transform: translateY(1px);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: 0.5s;
+}
+.btn:hover::before {
+  left: 100%;
+}
+
+.show-inp {
+  display: flex !important;
+}
+
 .container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
   padding: 20px 50px;
   width: 70%;
   height: -moz-fit-content;
   height: fit-content;
+}
+.container .buttons {
+  margin-top: 40px;
+  margin-bottom: -20px;
+  display: flex;
+  width: 50%;
+  gap: 20px;
+  justify-content: center;
+}
+.container .input {
+  display: none;
+  align-items: center;
+  flex-direction: column;
+  width: 80%;
+  gap: 20px;
+  position: relative;
+}
+.container .input button {
+  width: 20%;
+}
+.container .input #close {
+  z-index: 11;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 10px 20px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5em;
+  color: #EE82EE;
+}
+.container .input .inp {
+  outline: none;
+  height: 200px;
+  width: 80%;
+  padding: 10px 20px;
+  background-color: #4a4a4a;
+  color: #ffffff;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  font-size: 0.9em;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+.container .input .inp:hover {
+  background-color: #5a5a5a;
+  border-color: #EE82EE;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+.container .input .inp:active {
+  background-color: #3a3a3a;
+  transform: translateY(1px);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 .container .heading {
   width: 100%;
