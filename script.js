@@ -6,6 +6,9 @@ let add= document.querySelector("#add")
 let close= document.querySelector("#close")
 let taskElement = document.querySelector(".task");
 let input = document.querySelector(".input");
+let addTaskBtn = document.querySelector(".add-task-btn");
+let inp = document.querySelector(".inp");
+let tasksDiv = document.querySelector(".tasks");
 
 
 circle.addEventListener("mouseover", (e) => {
@@ -44,3 +47,30 @@ add.addEventListener('click',()=>{
     inp_toggle = false;
     console.log("removed")
   })
+  // console.log(tasks)
+  addTaskBtn.addEventListener('click',()=>{
+  let tasks=" "
+  console.log("clicked")
+  let val= inp.value
+    tasks=` <div class="task">
+                        <div class="left">
+                     <p>  ${val}.</p>
+                        </div>
+                        <div class="right">
+                          <div class="sub-right1">
+                            <p> 8PM 24AUG 2024</p>
+                          <p>Pending</p>
+                          </div>
+                          <div class="sub-right2">
+                            <img src="asset/icons/circle.svg " class="circle" alt="">
+                          </div>
+                        </div>
+                        <div class="menu">
+                            <span>Edit</span>
+                            <span id="pin">Pin</span>
+                            <span>Delete</span>
+                        </div>
+                    </div>` + tasks;
+                       console.log(tasks)
+                    tasksDiv.innerHTML += tasks
+})
