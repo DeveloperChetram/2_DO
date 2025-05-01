@@ -49,6 +49,44 @@ add.addEventListener('click',()=>{
   })
   // console.log(tasks)
   addTaskBtn.addEventListener('click',()=>{
+    if(inp.value !== "") {
+      addTask()
+      inp.value = ""; // Clear the input field after adding the task
+    }
+     else{
+      inp.placeholder = "Task cannot be empty!";
+      inp.style.border = "2.5px solid red"; // Change border color to red
+      setTimeout(() => {
+          inp.placeholder = "Enter your task here"; // Reset to default placeholder
+          inp.style.border = "1px solid #EE82EE"; // Reset border color to default
+        }, 2000); // Clear the message after 2 seconds 
+     }
+  let tasks=" "
+  console.log("clicked")
+  let val= inp.value
+   
+                    
+})
+
+inp.addEventListener('keypress', (e) => {
+  if (e.key === 'Enter') {
+  if(inp.value !== "") {
+    addTask()
+    inp.value = ""; // Clear the input field after adding the task
+  }
+   else{
+    inp.placeholder = "Task cannot be empty!";
+    inp.style.border = "1px solid red"; // Change border color to red
+    setTimeout(() => {
+        inp.placeholder = "Enter your task here"; // Reset to default placeholder
+        inp.style.border = "1px solid #EE82EE"; // Reset border color to default
+      }, 2000); // Clear the message after 2 seconds 
+   }
+
+  }
+  });
+
+function addTask(){
   let tasks=" "
   console.log("clicked")
   let val= inp.value
@@ -73,4 +111,5 @@ add.addEventListener('click',()=>{
                     </div>` + tasks;
                        console.log(tasks)
                     tasksDiv.innerHTML += tasks
-})
+  
+}
